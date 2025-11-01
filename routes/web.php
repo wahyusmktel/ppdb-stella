@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 // Halaman Landing Page (Publik)
@@ -29,6 +30,16 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(fun
     // Di sinilah nanti kita akan menambahkan rute CRUD
     // Misal: Route::resource('services', ServiceController::class);
 
+    // 2. TAMBAHKAN RUTE INI
+    // Ini akan otomatis membuat rute untuk:
+    // - admin.services.index (GET)
+    // - admin.services.create (GET)
+    // - admin.services.store (POST)
+    // - admin.services.show (GET)
+    // - admin.services.edit (GET)
+    // - admin.services.update (PUT/PATCH)
+    // - admin.services.destroy (DELETE)
+    Route::resource('services', ServiceController::class);
 });
 
 require __DIR__ . '/auth.php';
