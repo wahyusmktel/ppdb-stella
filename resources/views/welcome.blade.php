@@ -1,5 +1,5 @@
 {{-- 1. Memberitahu Blade untuk menggunakan layout 'app' --}}
-@extends('layouts.app')
+@extends('layouts.landing')
 
 {{-- 2. Mengatur judul halaman (opsional) --}}
 @section('title', 'Selamat Datang di Agensi Nova')
